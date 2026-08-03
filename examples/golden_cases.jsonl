@@ -1,0 +1,30 @@
+{"id":"g01","input":"请生成磁矩密度大于 0.2 μB/Å³ 且不含稀土元素的材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["magnetic_moment_density"],"expected_exclude_rare_earth":true}
+{"id":"g02","input":"设计磁矩密度大于 0.2 的材料","expected_status":"needs_clarification","expected_task":"generate_material","expected_properties":["magnetic_moment_density"],"expected_exclude_rare_earth":false}
+{"id":"g03","input":"生成一种高磁矩密度材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["magnetic_moment_density"],"expected_exclude_rare_earth":false}
+{"id":"g04","input":"请生成居里温度超过 400 K 的材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["curie_temperature"],"expected_exclude_rare_earth":false}
+{"id":"g05","input":"生成形成能小于 -0.5 eV/atom 的稳定材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["formation_energy"],"expected_exclude_rare_earth":false}
+{"id":"g06","input":"设计带隙为 1.5 eV 的材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["band_gap"],"expected_exclude_rare_earth":false}
+{"id":"g07","input":"生成磁矩密度至少 0.25 μB/Å³ 且居里温度高于 500 K 的材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["curie_temperature","magnetic_moment_density"],"expected_exclude_rare_earth":false}
+{"id":"g08","input":"请设计一种新材料","expected_status":"needs_clarification","expected_task":"generate_material","expected_properties":[],"expected_exclude_rare_earth":false}
+{"id":"g09","input":"我需要磁矩密度合适的材料","expected_status":"needs_clarification","expected_task":"generate_material","expected_properties":["magnetic_moment_density"],"expected_exclude_rare_earth":false}
+{"id":"g10","input":"居里温度大于 450 的候选材料","expected_status":"needs_clarification","expected_task":"generate_material","expected_properties":["curie_temperature"],"expected_exclude_rare_earth":false}
+{"id":"g11","input":"生成带隙在 1 到 2 eV 的半导体","expected_status":"submitted","expected_task":"generate_material","expected_properties":["band_gap"],"expected_exclude_rare_earth":false}
+{"id":"g12","input":"生成带隙在 1 到 2 的半导体","expected_status":"needs_clarification","expected_task":"generate_material","expected_properties":["band_gap"],"expected_exclude_rare_earth":false}
+{"id":"g13","input":"预测带隙为 1.2 eV 的材料性质","expected_status":"submitted","expected_task":"predict_properties","expected_properties":["band_gap"],"expected_exclude_rare_earth":false}
+{"id":"g14","input":"筛选形成能低于 -0.3 eV/atom 的候选","expected_status":"submitted","expected_task":"screen_candidates","expected_properties":["formation_energy"],"expected_exclude_rare_earth":false}
+{"id":"g15","input":"生成必须含 Fe 且磁矩密度大于 0.3 μB/Å³ 的材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["magnetic_moment_density"],"expected_exclude_rare_earth":false}
+{"id":"g16","input":"生成不含 Co 的带隙为 2 eV 材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["band_gap"],"expected_exclude_rare_earth":false}
+{"id":"g17","input":"生成 Tc 大于 500 K 的磁性材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["curie_temperature"],"expected_exclude_rare_earth":false}
+{"id":"g18","input":"generate material with band gap > 1.2 eV","expected_status":"submitted","expected_task":"generate_material","expected_properties":["band_gap"],"expected_exclude_rare_earth":false}
+{"id":"g19","input":"predict curie temperature above 600 K","expected_status":"submitted","expected_task":"predict_properties","expected_properties":["curie_temperature"],"expected_exclude_rare_earth":false}
+{"id":"g20","input":"请生成尽可能低形成能的材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["formation_energy"],"expected_exclude_rare_earth":false}
+{"id":"g21","input":"磁矩密度至少 0.3 μB/Å3 的材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["magnetic_moment_density"],"expected_exclude_rare_earth":false}
+{"id":"g22","input":"磁矩密度不超过 0.4 uB/A^3 的候选","expected_status":"submitted","expected_task":"generate_material","expected_properties":["magnetic_moment_density"],"expected_exclude_rare_earth":false}
+{"id":"g23","input":"居里温度为 600 K 且无稀土的材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["curie_temperature"],"expected_exclude_rare_earth":true}
+{"id":"g24","input":"生成低成本且高磁矩密度材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["magnetic_moment_density"],"expected_exclude_rare_earth":false}
+{"id":"g25","input":"生成一种高强度材料","expected_status":"needs_clarification","expected_task":"generate_material","expected_properties":[],"expected_exclude_rare_earth":false}
+{"id":"g26","input":"形成能介于 -1.0 至 -0.3 eV/atom 的材料","expected_status":"submitted","expected_task":"generate_material","expected_properties":["formation_energy"],"expected_exclude_rare_earth":false}
+{"id":"g27","input":"筛选带隙大于 2.0 eV 且不含稀土的候选","expected_status":"submitted","expected_task":"screen_candidates","expected_properties":["band_gap"],"expected_exclude_rare_earth":true}
+{"id":"g28","input":"预测该结构的居里温度","expected_status":"needs_clarification","expected_task":"predict_properties","expected_properties":["curie_temperature"],"expected_exclude_rare_earth":false}
+{"id":"g29","input":"筛选磁矩密度大于 0.15 μB/Å³ 的结果","expected_status":"submitted","expected_task":"screen_candidates","expected_properties":["magnetic_moment_density"],"expected_exclude_rare_earth":false}
+{"id":"g30","input":"请帮我找一个合适的候选","expected_status":"needs_clarification","expected_task":"generate_material","expected_properties":[],"expected_exclude_rare_earth":false}

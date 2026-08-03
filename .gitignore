@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv*/
+venv/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*APIkey*
+*credentials*
+*.pem
+*.key
+
+# Model weights and checkpoints
+*.bin
+*.ckpt
+*.onnx
+*.pt
+*.pth
+*.safetensors
+checkpoints/
+weights/
+models/
+
+# Datasets and runtime state
+data/
+datasets/
+runtime/
+*.db
+*.lmdb
+*.sqlite
+*.sqlite3
+
+# Generated scientific artifacts
+results/
+outputs/
+artifacts/
+*.cif
+*.extxyz
+*.traj
+
+# Logs, caches, and archives
+logs/
+*.log
+*.pid
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

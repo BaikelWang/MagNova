@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "magnova-agent"
+version = "0.1.0"
+description = "MiniMind-powered material requirement agent for MagNova"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic>=2.8,<3",
+  "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+ui = [
+  "streamlit>=1.36,<2",
+]
+dev = [
+  "pytest>=8,<9",
+]
+
+[project.scripts]
+magnova-agent = "magnova_agent.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
