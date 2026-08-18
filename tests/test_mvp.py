@@ -12,6 +12,7 @@ from magnova_agent import MagNovaAgent, MiniMindInterpreter, RuleBasedInterprete
 from magnova_agent.interpreter import InterpreterError, extract_json_object
 from magnova_agent.agent import MockMagNovaTool
 from magnova_agent.models import AgentStatus, MaterialRequest
+from magnova_agent.telemetry import InteractionRecorder
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -139,6 +140,44 @@ def test_minimind_interpreter_falls_back_explicitly(
 
     assert request.target_properties[0].name == "band_gap"
     assert request.parser_warnings == ["minimind_fallback:ConnectionError"]
+
+
+def test_minimind_interpreter_records_successful_interaction(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    trace_path = tmp_path / "interactions.jsonl"
+    interpreter = MiniMindInterpreter(
+        repair_attempts=0,
+        model_version="test-model",
+        recorder=InteractionRecorder(trace_path, "test-model"),
+    )
+    monkeypatch.setattr(
+        interpreter,
+        "_complete",
+        lambda messages: """{
+          "task": "generate_material",
+          "material_family": null,
+          "target_properties": [{
+            "name": "band_gap", "operator": "gte", "value": 1.5,
+            "lower_bound": null, "upper_bound": null, "unit": "eV"
+          }],
+          "composition": {
+            "required_elements": [], "excluded_elements": [],
+            "exclude_rare_earth": false
+          },
+          "free_text_constraints": []
+        }""",
+    )
+
+    interpreter.interpret("联系 13812345678，生成带隙至少 1.5 eV 的材料")
+
+    trace = json.loads(trace_path.read_text(encoding="utf-8"))
+    assert trace["outcome"] == "success"
+    assert trace["model_version"] == "test-model"
+    assert trace["input"]["user_text"].startswith("联系 <PHONE>")
+    assert trace["validation"]["request"]["target_properties"][0]["value"] == 1.5
+    assert trace["review"]["training_approved"] is False
 
 
 def test_extract_json_object_rejects_nested_fragment_of_malformed_outer() -> None:

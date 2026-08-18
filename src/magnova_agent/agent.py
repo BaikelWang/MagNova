@@ -2,7 +2,12 @@ from __future__ import annotations
 
 from .interpreter import RequirementInterpreter, RuleBasedInterpreter
 from .models import AgentOutcome, AgentStatus, MaterialRequest, ToolCall
-from .tooling import MagNovaTool, MockMagNovaTool
+from .tooling import (
+    MagNovaBlocked,
+    MagNovaNeedsClarification,
+    MagNovaTool,
+    MockMagNovaTool,
+)
 
 
 class MagNovaAgent:
@@ -53,12 +58,31 @@ class MagNovaAgent:
 
         try:
             result = self.tool.submit(request)
+        except MagNovaNeedsClarification as exc:
+            return AgentOutcome(
+                status=AgentStatus.NEEDS_CLARIFICATION,
+                request=request,
+                tool_call=prepared.tool_call,
+                clarification_questions=list(exc.questions)
+                or [str(exc)],
+                message=f"MagNova 需要补充信息：{exc}",
+            )
+        except MagNovaBlocked as exc:
+            return AgentOutcome(
+                status=AgentStatus.FAILED,
+                request=request,
+                tool_call=prepared.tool_call,
+                message=(
+                    f"MagNova 拒绝执行（{exc.block_reason or 'blocked'}）：{exc}。"
+                    "未回退 Mock 候选。"
+                ),
+            )
         except Exception as exc:  # backend boundary: convert failures to domain outcome
             return AgentOutcome(
                 status=AgentStatus.FAILED,
                 request=request,
                 tool_call=prepared.tool_call,
-                message=f"MagNova 工具调用失败：{exc}",
+                message=f"MagNova 工具调用失败（未回退 Mock）：{exc}",
             )
 
         return AgentOutcome(
@@ -69,7 +93,7 @@ class MagNovaAgent:
             backend_status=result.backend_status,
             candidates=result.candidates,
             message=(
-                f"MagNova 任务 {result.task_id} 已完成，"
-                f"返回 {len(result.candidates)} 个候选。"
+                f"MagNova 真实任务 {result.task_id} 已完成，"
+                f"返回 {len(result.candidates)} 个 AI 筛选候选（非 DFT/实验验证）。"
             ),
         )

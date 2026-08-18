@@ -6,10 +6,11 @@ This repository is a curated project showcase, not a full research artifact dump
 
 - Agent runtime, schemas, conversation logic, orchestration, persistence, and UI;
 - abstract generator/predictor/screener interfaces and mock implementations;
-- HTTP integration contracts that do not expose private backends;
+- HTTP and CLI adapter contracts that do not expose private backends;
+- evidence-grounded RAG runtime, validation, evaluation, and failure-analysis code;
 - generic MiniMind SFT, evaluation, tokenizer, embedding, and export utilities;
 - MatterGen/MatterSim workflow scripts that rely on separately obtained upstream assets;
-- small golden examples, aggregate parsing metrics, tests, and engineering notes.
+- small golden examples, aggregate metrics, selected non-sensitive showcase figures, tests, and engineering notes.
 
 ## Excluded
 
