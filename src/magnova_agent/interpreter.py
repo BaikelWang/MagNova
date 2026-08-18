@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import time
 from dataclasses import dataclass
 from typing import Any, Protocol
 
@@ -20,6 +21,7 @@ from .normalization import (
     has_rare_earth_exclusion,
     normalize_for_llm,
 )
+from .telemetry import InteractionRecorder, prompt_fingerprint
 
 
 class RequirementInterpreter(Protocol):
@@ -68,6 +70,8 @@ class MiniMindInterpreter:
     fallback: RequirementInterpreter | None = None
     normalize_input: bool = True
     system_prompt: str = SYSTEM_PROMPT
+    model_version: str = "minimind-unknown"
+    recorder: InteractionRecorder | None = None
 
     def _complete(self, messages: list[dict[str, str]]) -> str:
         response = requests.post(
@@ -101,6 +105,7 @@ class MiniMindInterpreter:
         return MaterialRequest.model_validate(payload)
 
     def interpret(self, text: str) -> MaterialRequest:
+        started_at = time.perf_counter()
         cleaned = " ".join(text.strip().split())
         if not cleaned:
             raise ValueError("user text must not be empty")
@@ -112,8 +117,8 @@ class MiniMindInterpreter:
             {"role": "user", "content": model_text},
         ]
         last_error: Exception | None = None
+        raw_output = ""
         for attempt in range(self.repair_attempts + 1):
-            raw_output = ""
             try:
                 raw_output = self._complete(messages)
                 request = self._validate(raw_output, cleaned)
@@ -142,7 +147,16 @@ class MiniMindInterpreter:
                     request.parser_warnings.extend(
                         f"normalized:{item}" for item in normalization.trace
                     )
-                return apply_critical_guardrails(request, cleaned)
+                request = apply_critical_guardrails(request, cleaned)
+                self._record_interaction(
+                    original_text=cleaned,
+                    normalized_text=model_text,
+                    raw_output=raw_output,
+                    outcome="success",
+                    started_at=started_at,
+                    request=request,
+                )
+                return request
             except (requests.RequestException, ValueError, ValidationError, InterpreterError) as exc:
                 last_error = exc
                 if isinstance(exc, requests.RequestException) or attempt >= self.repair_attempts:
@@ -165,8 +179,57 @@ class MiniMindInterpreter:
             request.parser_warnings.append(
                 f"minimind_fallback:{type(last_error).__name__ if last_error else 'unknown'}"
             )
+            self._record_interaction(
+                original_text=cleaned,
+                normalized_text=model_text,
+                raw_output=raw_output,
+                outcome="fallback",
+                started_at=started_at,
+                request=request,
+                error=last_error,
+            )
             return request
+        self._record_interaction(
+            original_text=cleaned,
+            normalized_text=model_text,
+            raw_output=raw_output,
+            outcome="error",
+            started_at=started_at,
+            error=last_error,
+        )
         raise InterpreterError(f"MiniMind interpretation failed: {last_error}") from last_error
+
+    def _record_interaction(
+        self,
+        *,
+        original_text: str,
+        normalized_text: str,
+        raw_output: str,
+        outcome: str,
+        started_at: float,
+        request: MaterialRequest | None = None,
+        error: BaseException | None = None,
+    ) -> None:
+        """Record observability data without making logging a serving dependency."""
+        if self.recorder is None:
+            return
+        try:
+            self.recorder.record(
+                prompt_hash=prompt_fingerprint(self.system_prompt),
+                original_text=original_text,
+                normalized_text=normalized_text,
+                raw_output=raw_output,
+                outcome=outcome,
+                latency_ms=(time.perf_counter() - started_at) * 1000,
+                validated_request=(
+                    request.model_dump(mode="json") if request is not None else None
+                ),
+                warnings=(request.parser_warnings if request is not None else []),
+                error=error,
+            )
+        except OSError:
+            # A full/read-only log volume must not make the Agent unavailable.
+            return
 
 
 ELEMENT_EXCLUSION_PREFIX = r"(?:不含|不得含|不能含|成分中不要|排除|避免使用)"
