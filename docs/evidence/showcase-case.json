@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "summary_kind": "sanitized_same_task_historical_showcase",
+  "compiled_on": "2026-10-28",
+  "historical_case_date": "2026-10-22",
+  "requirement": {
+    "task": "generate_material",
+    "target": "band_gap",
+    "operator": "gt",
+    "value": 0.2,
+    "unit": "eV",
+    "exclude_rare_earth": true
+  },
+  "recorded_dialogue": {
+    "messages": 25,
+    "user_messages": 12,
+    "assistant_messages": 13,
+    "selection": "curated_same_task_after_fix",
+    "segmented_recovery": true,
+    "unedited_uninterrupted_run_claimed": false
+  },
+  "task_aggregate_counts": {
+    "generated": 40,
+    "prefilter_pass": 35,
+    "prefilter_fail": 5,
+    "relax_success": 34,
+    "relax_fail_or_skipped": 6,
+    "inferred": 34,
+    "batch_unique": 34,
+    "batch_duplicates": 1,
+    "exploration": 34,
+    "exploitation": 0,
+    "rejected": 6,
+    "returned": 10
+  },
+  "scientific_launches_for_case_task": 1,
+  "scientific_acceptance": "partial_provenance",
+  "selected_candidate": {
+    "candidate_id": "g1_gen_020",
+    "formula": "FeO",
+    "queue": "exploration",
+    "structure_sha256": "77fcc36f0e910eab66818e11f29c3b3ad28722d733e7026ca86211511eba9a1e",
+    "relaxed_proxy_probabilities_as_recorded_text": {
+      "p_is_stable_relaxed": "0.37673261389488977",
+      "p_bandgap_gt02_relaxed": "0.9320937943874895",
+      "p_reported_is_fm_relaxed": "0.9851277835776768"
+    }
+  },
+  "scientific_boundary": {
+    "predictions_are_proxies": true,
+    "top1_is_ranking_not_validation": true,
+    "per_candidate_screening_provenance_complete": false,
+    "verifiable_dft_result_provided": false,
+    "verifiable_experimental_result_provided": false,
+    "discovery_of_new_material_claimed": false,
+    "success_rate_claimed": false
+  },
+  "source_artifacts": [
+    {
+      "basename": "fullcase_recovered_export02.json",
+      "sha256": "68ee9f2f0c34307ee50ca368ec2a9e5fb2d202887cb2a7702b2f791ceda9c933"
+    },
+    {
+      "basename": "continuity_public_case_verified.json",
+      "sha256": "0ce0b17336f98e4391653b9a95108f8e7d35cd237e955e75585bb0cff27dbd47"
+    }
+  ]
+}

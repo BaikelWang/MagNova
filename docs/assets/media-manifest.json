@@ -1,0 +1,53 @@
+{
+  "kind": "historical_application_screenshots",
+  "archive_date": "2026-10-22",
+  "schema_version": 1,
+  "publication_prepared": "2026-10-28",
+  "files": [
+    {
+      "sha256": "6386ed3b51d5f83cb9e58938e4f7cbbe29ca422fa4ca39909bf4934ee7acaef7",
+      "source_basename": "01_研究讨论.png",
+      "width": 3840,
+      "file": "research-discussion.png",
+      "height": 2160,
+      "pixel_modifications": false,
+      "bytes": 356784
+    },
+    {
+      "sha256": "fdcfd5b67ae3d02d5b02b0f7c69d65cc3fba530d78cee323ebe5f60e56baf9dd",
+      "source_basename": "02_文献检索.png",
+      "width": 3840,
+      "file": "literature-retrieval.png",
+      "height": 2160,
+      "pixel_modifications": false,
+      "bytes": 280785
+    },
+    {
+      "sha256": "88d55405d5ce8208e0416afa5496e2c486f827c7810f75b5176975c183434f12",
+      "source_basename": "03_参数确认.png",
+      "width": 3840,
+      "file": "requirement-confirmation.png",
+      "height": 2160,
+      "pixel_modifications": false,
+      "bytes": 330596
+    },
+    {
+      "sha256": "070dc69cdeee90f9a1cb3fc71e0cd89b833c03f9fecc560669dcd77e51cdb08d",
+      "source_basename": "04_晶体结构与预测.png",
+      "width": 3840,
+      "file": "crystal-results.png",
+      "height": 2160,
+      "pixel_modifications": false,
+      "bytes": 325450
+    },
+    {
+      "sha256": "6c3a33c3d7f679ef59f3fb13181b3db0bd55456948048e55d782f996c35e30cd",
+      "source_basename": "05_结果分析.png",
+      "width": 3840,
+      "file": "result-analysis.png",
+      "height": 2160,
+      "pixel_modifications": false,
+      "bytes": 529280
+    }
+  ]
+}

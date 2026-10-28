@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="480" viewBox="0 0 1600 480" role="img" aria-labelledby="hero-title hero-desc">
+  <title id="hero-title">MagNova · 磁星智研</title>
+  <desc id="hero-desc">Research agents for materials discovery. 2026 华为杯国家一等奖、全国二十强，荣誉由项目团队提供。需求理解、证据检索、工具调度与候选溯源组成科研工作流。右侧为抽象晶格示意，不代表实际候选结构或实验结果。</desc>
+  <defs>
+    <marker id="hero-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#728079" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <pattern id="hero-grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#D6DFD8"/></pattern>
+  </defs>
+  <rect x="1" y="1" width="1598" height="478" rx="24" fill="#F8F7F2" stroke="#E0E3DB" stroke-width="2"/>
+  <path d="M80 94 H1520" fill="none" stroke="#D8DDD5" stroke-width="1.5"/>
+  <rect x="80" y="32" width="602" height="44" rx="22" fill="#EFEBDD"/>
+  <circle cx="105" cy="54" r="4" fill="#A88243"/>
+  <text x="124" y="63" fill="#735A32" font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="25" font-weight="500">2026 华为杯 · 国家一等奖 · 全国 20 强</text>
+  <path d="M80 133 V295" stroke="#2E6758" stroke-width="4" stroke-linecap="round"/>
+  <text x="111" y="222" fill="#172B36" font-family="Georgia,'Times New Roman',serif" font-size="112" font-weight="700" letter-spacing="-4">MagNova</text>
+  <text x="116" y="277" fill="#244C43" font-family="'Noto Serif CJK SC','Songti SC','SimSun',serif" font-size="40" letter-spacing="9">磁星智研</text>
+  <text x="113" y="327" fill="#4B5B60" font-family="Georgia,'Times New Roman',serif" font-size="31">Research agents for materials discovery</text>
+  <path d="M80 365 H929" stroke="#D8DDD5" stroke-width="1.5"/>
+  <g fill="#243C40" font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="26">
+    <circle cx="90" cy="414" r="5" fill="#2E6758"/><text x="108" y="423">需求理解</text>
+    <path d="M239 414 H282" stroke="#8B9790" stroke-width="1.8" marker-end="url(#hero-arrow)"/>
+    <circle cx="310" cy="414" r="5" fill="#2E6758"/><text x="328" y="423">证据检索</text>
+    <path d="M459 414 H502" stroke="#8B9790" stroke-width="1.8" marker-end="url(#hero-arrow)"/>
+    <circle cx="530" cy="414" r="5" fill="#2E6758"/><text x="548" y="423">工具调度</text>
+    <path d="M679 414 H722" stroke="#8B9790" stroke-width="1.8" marker-end="url(#hero-arrow)"/>
+    <circle cx="750" cy="414" r="5" fill="#A88243"/><text x="768" y="423">候选溯源</text>
+  </g>
+  <rect x="1015" y="112" width="470" height="315" rx="24" fill="url(#hero-grid)" opacity="0.48"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1092 157 L1276 115 L1412 203 L1228 245 Z" fill="#EDF1EA" fill-opacity="0.8" stroke="#B9C9BE" stroke-width="2"/>
+    <path d="M1092 157 V311 L1228 399 V245 M1276 115 V269 L1412 357 V203 M1092 311 L1276 269 M1228 399 L1412 357" stroke="#93AD9C" stroke-width="2"/>
+    <path d="M1092 157 L1252 257 L1412 203 M1092 311 L1252 257 L1412 357 M1276 115 L1252 257 L1228 399" stroke="#B2C2B7" stroke-width="1.7"/>
+    <path d="M1276 269 L1228 245" stroke="#B6C5BA" stroke-width="1.5" stroke-dasharray="5 8"/>
+    <path d="M1092 157 L1228 245 L1228 399" stroke="#376C5B" stroke-width="3"/>
+  </g>
+  <g stroke="#F8F7F2" stroke-width="4">
+    <circle cx="1092" cy="157" r="12" fill="#2E6758"/><circle cx="1276" cy="115" r="10" fill="#789D89"/>
+    <circle cx="1412" cy="203" r="11" fill="#2E6758"/><circle cx="1228" cy="245" r="12" fill="#2E6758"/>
+    <circle cx="1092" cy="311" r="10" fill="#789D89"/><circle cx="1276" cy="269" r="10" fill="#789D89"/>
+    <circle cx="1412" cy="357" r="12" fill="#2E6758"/><circle cx="1228" cy="399" r="11" fill="#2E6758"/>
+    <circle cx="1252" cy="257" r="18" fill="#AE8950"/>
+  </g>
+</svg>

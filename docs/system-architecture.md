@@ -1,5 +1,15 @@
 # MagNova system architecture
 
+## Competition system and public baseline
+
+![MagNova competition-system responsibility architecture](assets/architecture.svg)
+
+The competition system connects evidence retrieval, MiniMind requirement understanding, deterministic validation and clarification, explicit user confirmation, durable task orchestration, and scientific tools. MatterGen proposes structures, MatterSim participates in relaxation, and the private SACGT service supplies proxy predictions and risk signals. Candidate structure, property fields, CIF and explanation share a task-level provenance boundary. DFT and experimental validation remain separate scientific steps.
+
+The diagram describes the completed competition system, **not a promise that cloning this repository reproduces every service shown**. The original public code baseline is retained. Its contracts and extension points are documented below; production-specific authentication, confirmation, model assets, retrieval corpus and the latest deployment Harness are not newly published by this showcase update.
+
+See [the historical case](showcase-case.md) and [public release scope](public-release-scope.md).
+
 ## Responsibility boundary
 
 MagNova separates language reasoning from scientific computation:

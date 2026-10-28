@@ -2,6 +2,18 @@
 
 This repository is a curated project showcase, not a full research artifact dump.
 
+## Competition showcase — October 2026
+
+MagNova received a National First Prize and reached the national Top 20 in the 2026 Huawei Cup China Postgraduate AI Innovation Competition. The October 28 showcase update adds the project story, original architecture graphics, selected historical UI screenshots, and bounded validation summaries. It does **not** replace the existing public application code or publish the entire competition deployment.
+
+The distinction is deliberate:
+
+- **Competition system:** the deployed research workflow shown in the screenshots, including authenticated access, evidence retrieval, explicit confirmation, real scientific execution, candidate provenance and recovery.
+- **Public code baseline:** the runnable contracts, agent components, task-management interfaces, mock workflow, training utilities and selected integration experiments already present here.
+- **Showcase evidence:** historical same-task extracts and aggregate acceptance records, with dates, limitations and media attribution. This is not a fresh run, a new model evaluation, or an assertion that the hosted service remains online.
+
+No award certificate, personal contact information, account credential or private manuscript is included. Screenshots show task/candidate identifiers for traceability; these are not login or execution credentials. See [the case](showcase-case.md), [validation boundaries](validation.md) and [media attribution](assets/README.md).
+
 ## Included
 
 - Agent runtime, schemas, conversation logic, orchestration, persistence, and UI;

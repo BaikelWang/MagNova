@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "summary_kind": "sanitized_historical_deployment_acceptance",
+  "compiled_on": "2026-10-28",
+  "archived_acceptance_date": "2026-10-22",
+  "scope": "full_competition_deployment_not_current_public_baseline",
+  "engineering_regression": {
+    "total": 1183,
+    "passed": 1182,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "conversation_browser_checks": {
+    "total": 10,
+    "passed": 10,
+    "checks": [
+      "login",
+      "greeting_help",
+      "rag_evidence",
+      "reload_restore",
+      "same_account_second_context",
+      "cas_stale_tab_blocked",
+      "explicit_reopen_sync",
+      "delete_tombstone",
+      "stale_deleted_tab_blocked",
+      "pending_confirmation_not_restored"
+    ]
+  },
+  "public_entry_checks": [
+    "login",
+    "ordinary_dialogue",
+    "literature_retrieval",
+    "historical_case",
+    "interactive_3d",
+    "cif_hash_match",
+    "logout"
+  ],
+  "new_work_during_this_acceptance": {
+    "training_runs": 0,
+    "paid_api_calls": 0,
+    "material_computations": 0
+  },
+  "activation": {
+    "initial_controller_reported_failure": true,
+    "original_failure_preserved": true,
+    "already_running_candidate_independently_verified": true,
+    "public_entry_verified_after_reconciliation": true
+  },
+  "not_established_by_these_records": [
+    "current_public_repository_test_count",
+    "model_answer_accuracy",
+    "scientific_task_success_rate",
+    "new_model_replacement_of_production_baseline",
+    "seven_day_stability_observation_completed",
+    "live_service_status_on_compilation_date"
+  ],
+  "source_artifacts": [
+    {
+      "basename": "continuity_delivery_live_verified.json",
+      "sha256": "f3172eef98c95fd6b40b38e07428fef22cf600674b79920da7f581f7ed437853"
+    },
+    {
+      "basename": "continuity_release_reconciled_success.json",
+      "sha256": "b74f05ee262a05be69962f7940fe4c60aa0d582cf2ccdcbac25bb792676195ba"
+    }
+  ]
+}

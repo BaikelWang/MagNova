@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="arch-title arch-desc">
+  <title id="arch-title">MagNova：从研究需求到可追溯候选的科研工作流</title>
+  <desc id="arch-desc">三条职责泳道分别是用户与证据、模型理解和 Harness 确定性控制、科学计算与可追溯输出。MiniMind理解自然语言需求并形成MaterialRequest，确定性程序执行校验澄清、人工确认、持久任务调度。科学任务依次调用MatterGen生成、MatterSim弛豫、SACGT代理预测，输出候选、3D结构与CIF。DFT和实验是独立的后续核验，不表示当前候选已经验证。文献原文为研究提供可定位依据，不自动证明生成候选的物性。</desc>
+  <defs>
+    <marker id="arch-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#61756E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="arch-gold-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 L8 5 L1 9" fill="none" stroke="#A88243" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
+  </defs>
+  <rect width="1600" height="900" rx="24" fill="#FAFAF6"/>
+  <text x="68" y="73" fill="#172B36" font-family="'Noto Serif CJK SC','Songti SC','SimSun',serif" font-size="46" font-weight="700">MagNova 科研工作流</text>
+  <text x="70" y="117" fill="#63716F" font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="26">模型理解需求，Harness 控制执行，科学模型计算结果。</text>
+  <rect x="38" y="150" width="1524" height="150" rx="16" fill="#EFF3EE"/>
+  <path d="M200 330 H1532 M200 580 H1532" stroke="#D5DDD4" stroke-width="1.5"/>
+  <rect x="38" y="610" width="1524" height="205" rx="16" fill="#F1F1E8"/>
+  <g fill="#324E48" font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif" font-weight="500">
+    <text x="62" y="217" font-size="30">用户与证据</text>
+    <text x="62" y="397" font-size="30">模型理解</text><text x="62" y="437" font-size="28">＋ Harness</text><text x="62" y="476" font-size="26">确定性控制</text>
+    <text x="62" y="689" font-size="30">科学计算</text><text x="62" y="730" font-size="26">可追溯输出</text>
+  </g>
+  <g font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif">
+    <rect x="225" y="171" width="305" height="106" rx="12" fill="#FCFCF8" stroke="#D4DED3" stroke-width="1.5"/>
+    <text x="250" y="215" fill="#203C3D" font-size="32" font-weight="500">研究目标</text><text x="250" y="253" fill="#64766F" font-size="24">性质 · 单位 · 成分</text>
+    <rect x="605" y="171" width="405" height="106" rx="12" fill="#FCFCF8" stroke="#D4DED3" stroke-width="1.5"/>
+    <g fill="none" stroke="#728D7D" stroke-width="2.5" stroke-linecap="round"><path d="M633 196 V251 M645 196 V251 M659 196 L669 251"/></g>
+    <text x="697" y="215" fill="#203C3D" font-size="32" font-weight="500">文献检索</text><text x="697" y="253" fill="#64766F" font-size="24">可回看的原文片段</text>
+    <rect x="1090" y="171" width="420" height="106" rx="12" fill="#FCFCF8" stroke="#D4DED3" stroke-width="1.5"/>
+    <text x="1120" y="215" fill="#203C3D" font-size="32" font-weight="500">证据定位</text><text x="1120" y="253" fill="#64766F" font-size="24">出处 · 页码 / 段落</text>
+  </g>
+  <g fill="none" stroke="#61756E" stroke-width="2" stroke-linecap="round" marker-end="url(#arch-arrow)"><path d="M546 224 H584"/><path d="M1028 224 H1070"/><path d="M310 278 V365"/></g>
+  <path d="M475 349 H1515" stroke="#C5D0C7" stroke-width="1.5"/>
+  <text x="1003" y="342" fill="#6A7A72" font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="24" text-anchor="middle">Harness · 显式规则与任务状态</text>
+  <circle cx="310" cy="422" r="45" fill="#2E6758"/><text x="310" y="442" fill="#FFFFFF" font-family="Georgia,'Times New Roman',serif" font-size="58" text-anchor="middle">M</text>
+  <g fill="none" stroke="#58766A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M548 381 H600 L619 400 V466 H548 Z" fill="#F7F8F2"/><path d="M600 381 V400 H619 M564 419 H602 M564 432 H602 M564 445 H590"/>
+    <path d="M850 383 L887 399 V423 C887 445 872 459 850 468 C828 459 813 445 813 423 V399 Z" fill="#F2F5EE"/><path d="M835 423 L845 433 L866 411" stroke-width="3"/>
+    <circle cx="1120" cy="403" r="18" fill="#F7F8F2"/><path d="M1085 461 V450 C1085 430 1101 424 1120 424 C1139 424 1155 430 1155 450 V461"/>
+    <rect x="1352" y="388" width="78" height="18" rx="5" fill="#F3F5EF"/><rect x="1352" y="417" width="78" height="18" rx="5" fill="#F3F5EF"/><rect x="1352" y="446" width="78" height="18" rx="5" fill="#F3F5EF"/>
+  </g>
+  <g fill="none" stroke="#61756E" stroke-width="2" stroke-linecap="round" marker-end="url(#arch-arrow)"><path d="M379 422 H498"/><path d="M653 422 H773"/><path d="M921 422 H1040"/><path d="M1191 422 H1311"/></g>
+  <g font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif" text-anchor="middle">
+    <text x="310" y="507" fill="#244C43" font-size="32" font-weight="600">MiniMind</text><text x="310" y="543" fill="#65756E" font-size="25">领域需求理解</text>
+    <text x="580" y="507" fill="#1B3540" font-family="Georgia,'Times New Roman',serif" font-size="30">MaterialRequest</text><text x="580" y="543" fill="#65756E" font-size="25">统一任务契约</text>
+    <text x="850" y="507" fill="#1B3540" font-size="30" font-weight="500">校验与澄清</text><text x="850" y="543" fill="#65756E" font-size="24">数值 · 单位 · 关系</text>
+    <text x="1120" y="507" fill="#1B3540" font-size="30" font-weight="500">用户确认</text><text x="1120" y="543" fill="#65756E" font-size="25">未确认不执行</text>
+    <text x="1390" y="507" fill="#1B3540" font-size="30" font-weight="500">持久化任务</text><text x="1390" y="543" fill="#65756E" font-size="24">状态 · 幂等 · 恢复</text>
+  </g>
+  <path d="M1390 560 V579 Q1390 595 1374 595 H365 Q350 595 350 611 V635" fill="none" stroke="#61756E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arch-arrow)"/>
+  <g fill="none" stroke="#61756E" stroke-width="2" stroke-linecap="round" marker-end="url(#arch-arrow)"><path d="M476 712 H548"/><path d="M797 712 H871"/><path d="M1128 712 H1200"/></g>
+  <g fill="none" stroke="#BFCDBE" stroke-width="1.5">
+    <path d="M318 651 L359 637 L390 659 L349 674 Z M318 651 V685 L349 708 V674 M359 637 V672 L390 694 V659 M318 685 L359 672 M349 708 L390 694"/>
+    <path d="M654 646 C640 657 640 681 654 694 M700 646 C714 657 714 681 700 694 M656 652 L700 688 M656 688 L700 652" stroke="#76937F" stroke-width="2"/>
+    <path d="M963 695 V654 M984 695 V641 M1005 695 V665 M1026 695 V650" stroke="#76937F" stroke-width="6" stroke-linecap="round"/>
+    <rect x="1290" y="638" width="79" height="60" rx="7" fill="#FAFAF6" stroke="#76937F" stroke-width="2"/>
+    <path d="M1310 659 L1321 652 L1333 662 L1322 670 Z M1322 670 V682 M1333 662 V675 L1322 682 M1310 659 V672 L1322 682" stroke="#76937F" stroke-width="1.7"/>
+  </g>
+  <g fill="#2E6758"><circle cx="318" cy="651" r="5"/><circle cx="359" cy="637" r="5"/><circle cx="390" cy="659" r="5"/><circle cx="349" cy="674" r="5"/><circle cx="318" cy="685" r="5"/><circle cx="359" cy="672" r="5"/><circle cx="390" cy="694" r="5"/><circle cx="349" cy="708" r="5"/><circle cx="656" cy="652" r="5"/><circle cx="700" cy="652" r="5"/><circle cx="656" cy="688" r="5"/><circle cx="700" cy="688" r="5"/></g>
+  <g font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif" text-anchor="middle">
+    <text x="355" y="752" fill="#213B39" font-family="Georgia,'Times New Roman',serif" font-size="32">MatterGen</text><text x="355" y="790" fill="#66766D" font-size="25">生成结构</text>
+    <text x="678" y="752" fill="#213B39" font-family="Georgia,'Times New Roman',serif" font-size="32">MatterSim</text><text x="678" y="790" fill="#66766D" font-size="25">结构弛豫</text>
+    <text x="995" y="752" fill="#213B39" font-family="Georgia,'Times New Roman',serif" font-size="32">SACGT</text><text x="995" y="790" fill="#66766D" font-size="25">性质代理预测</text>
+    <text x="1330" y="752" fill="#213B39" font-size="30" font-weight="500">筛选与输出</text><text x="1330" y="790" fill="#66766D" font-size="25">候选 · 3D · CIF</text>
+  </g>
+  <text x="224" y="867" fill="#79623D" font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="25">代理预测 ≠ DFT / 实验验证</text>
+  <path d="M1330 812 V837 Q1330 850 1343 850 H1375" fill="none" stroke="#A88243" stroke-width="2" stroke-dasharray="6 7" marker-end="url(#arch-gold-arrow)"/>
+  <text x="1165" y="867" fill="#8D764F" font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="24">后续核验</text>
+  <text x="1394" y="859" fill="#79623D" font-family="'Noto Sans CJK SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="26">DFT / 实验</text>
+</svg>
